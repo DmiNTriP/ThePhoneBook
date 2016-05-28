@@ -8,7 +8,7 @@ public class Employee {
     private String mPhoneNum;
     private Employee next; // references next employee in the LinkedList
     private int key;
-    private int hashBucket // add Math.abs here to make all hashbuckets positive
+    private int hashBucket; // add Math.abs here to make all hashbuckets positive
 
 //TODO this may need to get used as a constructor but probably not;
     public Employee(String firstName, String lastName,String email, String phoneNum){
@@ -104,7 +104,7 @@ public class Employee {
         int hashhKey = 0;
         for (int i = 0; i < fullName().length(); i++) {
             int charCode = fullName().charAt(i);
-            hashhKey = (hashhKey * 67 + charCode) % 13;
+            hashhKey = Math.abs(hashhKey * 67 + charCode) % 13;
         }
         return hashhKey;
     }
