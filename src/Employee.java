@@ -17,7 +17,8 @@ public class Employee {
         mEmail = email;
         mPhoneNum = phoneNum;
         key = nameToHash();
-        hashBucket = nameToHash() % 13;
+        hashBucket = (nameToHash()+1) % 13;
+
     }
 
     @Override
@@ -81,6 +82,9 @@ public class Employee {
         this.key = key;
     }
 
+    public int getHashBucket() {
+        return hashBucket;
+    }
     /*    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -105,7 +109,7 @@ public class Employee {
         return mFirstName.toUpperCase().concat(mLastName.toUpperCase());
     }
     public int nameToHash(){
-      return Math.abs(13 + fullName().hashCode() -1);
+      return Math.abs( fullName().hashCode() -1);
     }
 
 }

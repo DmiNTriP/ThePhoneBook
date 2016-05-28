@@ -40,7 +40,7 @@ public class Main {
         table.addInformation(janeD);
 
 
-        table.find(bob.fullName());
+        table.find(billy,billy.fullName());
 
 
 

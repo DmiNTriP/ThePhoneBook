@@ -58,20 +58,27 @@ public class HashTable {
         linkListArray[hashBucket].insert(newEmployee);
     }
 
-    public boolean find( String nameToFind) {
-        Employee employee = newEmployee;
-        int hashKey = employee.nameToHash();
-        boolean found = true;
-        if(found) {
-           employee= linkListArray[hashKey].search(hashKey, nameToFind);
-            System.out.println(nameToFind + "was found");
+    public boolean find(Employee newEmployee,String nameToFind) {
+        //create an employee object to reference;
+        boolean found;
 
-            return found;
-        }
-        else{
-            System.out.print("employee not found");
+       if(nameToFind.equals(newEmployee.fullName())) {
+           // if we have a match then we will hash the key
+           int hashKey= newEmployee.nameToHash();
+            int bucket= newEmployee.nameToHash() % arraySize;
+           System.out.println(bucket);
+            found = true;
+            if (found) {
+                linkListArray[bucket].search(hashKey);
+                System.out.println(nameToFind + "was found");
+
+                return found;
+            } else {
+                System.out.print("employee not found");
+            }
         }
         return  false;
+
    }
 
     public void addInformation(Employee anEmployee) {
