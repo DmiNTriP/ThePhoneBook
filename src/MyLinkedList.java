@@ -7,8 +7,8 @@
  */
 public class MyLinkedList {
 
-    private Employee firstEmployee = null;
-    private Employee nextEmployeeInList = null;
+    private Employee firstEmployee;
+
 
     public MyLinkedList(Employee firstEmployee) {
         this.firstEmployee = firstEmployee;
@@ -25,8 +25,8 @@ public class MyLinkedList {
     }
 
     public MyLinkedList insert(Employee newEmployee) {
-        Employee previousEmployee = firstEmployee;
-        Employee currentEmployee = firstEmployee;
+        Employee previousEmployee = getFirstEmployee();
+        Employee currentEmployee = getFirstEmployee();
 
         if (newEmployee == null) {
             System.out.println("Failure to insert new Employee into Linked List.");
@@ -67,10 +67,10 @@ public class MyLinkedList {
     }
 
     // Search for the employee object that is being called
-    public Employee search(int hashKey, String nameToFind) throws NullPointerException {
+    public Employee search(int hashKey) throws NullPointerException, ArrayIndexOutOfBoundsException {
         Employee current = firstEmployee;
         while (current != null && current.getKey() != hashKey) {
-            if (current.fullName().equals(nameToFind)) {
+            if (current.getKey() == hashKey) {
                 return current;
             } else {
 

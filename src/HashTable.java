@@ -12,6 +12,7 @@ public class HashTable {
     public HashTable() {// the size here will determine how big we want the array to be and in this case it will be 13
         //creating the Array for the linkedlist
         linkListArray = new MyLinkedList[arraySize];
+        link = new MyLinkedList(newEmployee);
        newEmployee = null;
 /*
      addInformation(newEmployee);
@@ -63,7 +64,7 @@ public class HashTable {
         int hashKey = employee.nameToHash();
         boolean found = true;
         if(found) {
-           employee= linkListArray[hashKey].search(hashKey, nameToFind);
+           employee= linkListArray[hashKey].search(hashKey);
             System.out.println(nameToFind + "was found");
 
             return found;
