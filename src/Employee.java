@@ -8,6 +8,7 @@ public class Employee {
     private String mPhoneNum;
     private Employee next; // references next employee in the LinkedList
     private int key;
+    private int hashBucket // add Math.abs here to make all hashbuckets positive
 
 //TODO this may need to get used as a constructor but probably not;
     public Employee(String firstName, String lastName,String email, String phoneNum){

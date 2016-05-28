@@ -6,3 +6,10 @@ git checkout HEAD^ (src/...) will undo last commit after file has been added to 
 
 git reset --hard HEAD^  will get back to not the current commit but the previous commit the current commit you are on will no longer be there
 
+git checkout -b creates a branch and makes that your working branch
+
+when in the branch you want to be in : git merge (branchname) will merge the branch you want into your current working branch
+
+git -d deletes a working branch
+
+
