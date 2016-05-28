@@ -1,3 +1,8 @@
 git checkout (src/...) is how you move back to a file before the change took place IF YOU HAVENT ALREADY ADDED IT THE THE STAGING AREA
 
 git reset HEAD (src/...) will reset a commit thats already been staged then follow up with a git checkout to retrieve the correct file version
+
+git checkout HEAD^ (src/...) will undo last commit after file has been added to staging area
+
+git reset --hard HEAD^  will get back to not the current commit but the previous commit the current commit you are on will no longer be there
+
