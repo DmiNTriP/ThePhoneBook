@@ -30,7 +30,7 @@ public class HashTable {
             int temphashKeyValue = hKeyValue;
 
             //calculate hash key using the 26 letters in alphabet + a blank
-            hKeyValue = (hKeyValue * 67 + charCodeK) % arraySize;
+            hKeyValue = Math.abs(hKeyValue * 67 + charCodeK) % arraySize;
 
             System.out.println("The Hash Key Value is: " + temphashKeyValue +
                     " * 47 + Character code (unicode) " + "%" +
