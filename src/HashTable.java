@@ -58,11 +58,12 @@ public class HashTable {
         linkListArray[hashBucket].insert(newEmployee);
     }
 
-    public boolean find(String nameToFind) {
-        int hashKey = nameHashingFunction(nameToFind);
+    public boolean find( String nameToFind) {
+        Employee employee = newEmployee;
+        int hashKey = employee.nameToHash();
         boolean found = true;
         if(found) {
-            Employee employee= linkListArray[hashKey].search(hashKey, nameToFind);
+           employee= linkListArray[hashKey].search(hashKey, nameToFind);
             System.out.println(nameToFind + "was found");
 
             return found;

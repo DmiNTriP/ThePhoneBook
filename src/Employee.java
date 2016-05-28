@@ -17,15 +17,19 @@ public class Employee {
         mEmail = email;
         mPhoneNum = phoneNum;
         key = nameToHash();
+        hashBucket = nameToHash() % 13;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "Full name " + fullName() +
-                "mEmail='" + mEmail + '\'' +
+                "mFirstName='" + mFirstName + '\'' +
+                ", mLastName='" + mLastName + '\'' +
+                ", mEmail='" + mEmail + '\'' +
                 ", mPhoneNum='" + mPhoneNum + '\'' +
+                ", next=" + next +
                 ", key=" + key +
+                ", hashBucket=" + hashBucket +
                 '}';
     }
 
@@ -101,12 +105,7 @@ public class Employee {
         return mFirstName.toUpperCase().concat(mLastName.toUpperCase());
     }
     public int nameToHash(){
-        int hashhKey = 0;
-        for (int i = 0; i < fullName().length(); i++) {
-            int charCode = fullName().charAt(i);
-            hashhKey = Math.abs(hashhKey * 67 + charCode) % 13;
-        }
-        return hashhKey;
+      return Math.abs(13 + fullName().hashCode() -1);
     }
 
 }
