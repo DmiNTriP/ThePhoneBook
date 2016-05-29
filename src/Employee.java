@@ -27,11 +27,11 @@ public class Employee {
                 "mFirstName='" + mFirstName + '\'' +
                 ", mLastName='" + mLastName + '\'' +
                 ", mEmail='" + mEmail + '\'' +
-                ", mPhoneNum='" + mPhoneNum + '\'' +
-                ", next=" + next +
+                ", mPhoneNum='" + mPhoneNum  +'}';
+               /* ", next=" + next
                 ", key=" + key +
                 ", hashBucket=" + hashBucket +
-                '}';
+                '}';*/
     }
 
     public String getFirstName() {

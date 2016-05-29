@@ -13,7 +13,7 @@ public class HashTable {
         //creating the Array for the linkedlist
         linkListArray = new MyLinkedList[arraySize];
         link = new MyLinkedList(newEmployee);
-       newEmployee = null;
+
 /*
      addInformation(newEmployee);
 */
@@ -87,6 +87,7 @@ public class HashTable {
             String eMail = anEmployee.getEmail();
             String phoneNum = anEmployee.getPhoneNum();
             anEmployee = new Employee(firstName, lastName, eMail, phoneNum);
+            link.insert(anEmployee);
             int hashBucket = hashKey % 13;
             linkListArray[hashBucket] = link;
             System.out.println(anEmployee + " has been added");

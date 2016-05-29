@@ -7,12 +7,13 @@
  */
 public class MyLinkedList {
 
-    private Employee firstEmployee;
+    private Employee firstEmployee = null;// don't know why this works
 
 
     public MyLinkedList(Employee firstEmployee) {
+        //TODO fix this first Employee object
         this.firstEmployee = firstEmployee;
-        Employee aBob = new Employee("Bob","Smith","bSmith@somewhere.com","555-555-5555");
+        System.out.println(firstEmployee);
 
     }
 
@@ -40,9 +41,8 @@ public class MyLinkedList {
         }
         else {
 
-            while(currentEmployee != null){ //Go through Linked List to find the end of the list
                 previousEmployee = currentEmployee;
-                currentEmployee = currentEmployee.getNext();
+                currentEmployee = currentEmployee.setNext(newEmployee);
             }
 
             //prevoius Employee contains the last valid Employee in the list.
