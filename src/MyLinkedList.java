@@ -1,7 +1,6 @@
 
 
 
-
 /**
  * Created by Kyler on 4/20/2016.
  */
@@ -13,49 +12,45 @@ public class MyLinkedList {
     public MyLinkedList(Employee firstEmployee) {
         //TODO fix this first Employee object
         this.firstEmployee = firstEmployee;
-        System.out.println(firstEmployee);
+        System.out.println(firstEmployee + " is in the mulinkedList class");
 
     }
 
-    public Employee getFirstEmployee() {
+  /*  public Employee getFirstEmployee() {
         return firstEmployee;
     }
 
     public void setFirstEmployee(Employee firstEmployee) {
         this.firstEmployee = firstEmployee;
-    }
+    }*/
 
     public MyLinkedList insert(Employee newEmployee) {
-        Employee previousEmployee = getFirstEmployee();
-        Employee currentEmployee = getFirstEmployee();
+        Employee previousEmployee = firstEmployee;
+        System.out.println(previousEmployee + "is what happened after prev emp");
+
+
+        Employee currentEmployee = firstEmployee;
+        System.out.println(currentEmployee + "is what happened after current emp");
 
         if (newEmployee == null) {
             System.out.println("Failure to insert new Employee into Linked List.");
             return this;
         }
 
-        if( firstEmployee == null) //we're at the start of the list
+        if (firstEmployee == null) //we're at the start of the list
         {
             firstEmployee = newEmployee; //adds to the front of the list.
             firstEmployee.setNext(newEmployee);
-        }
-        else {
-
-                previousEmployee = currentEmployee;
-                currentEmployee = currentEmployee.setNext(newEmployee);
+        } else {
+            while (newEmployee != null) {
+                newEmployee = firstEmployee;
+                firstEmployee = firstEmployee.getNext();
             }
-
-            //prevoius Employee contains the last valid Employee in the list.
-            //Do the insert
-            previousEmployee.setNext(newEmployee); //append to the end of the list
-            newEmployee.setNext(null); //newEmployee is the end of the list.
         }
-        //ADDS THE EMPLOYEE OBJECT TO
+
+
         return this;
     }
-
-
-
 
 
     public void displayLinkedList() {

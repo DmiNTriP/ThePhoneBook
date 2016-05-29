@@ -9,6 +9,8 @@ public class Main {
         Employee emp = new Employee("Kyler","Callaway","kyler.cal/away", "k");
         MyLinkedList theLinkedList = new MyLinkedList(emp);
 
+
+
         Employee bob = new Employee("Bob","Smith","bSmith@somewhere.com","555-555-5555");
         table.addInformation(bob);
         Employee jane = new Employee("Jane","Williams","jw@somewhere.com","555-555-5555");
