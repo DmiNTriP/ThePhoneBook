@@ -1,6 +1,9 @@
 git checkout (src/...) is how you move back to a file before the change took place IF YOU HAVENT ALREADY ADDED IT THE THE STAGING AREA
+git reset  will unstage files that have been staged
 
 git reset HEAD (src/...) will reset a commit thats already been staged then follow up with a git checkout to retrieve the correct file version
+
+git checkout --<target> gets rid of all changers since last commit
 
 git checkout HEAD^ (src/...) will undo last commit after file has been added to staging area
 
@@ -11,5 +14,20 @@ git checkout -b creates a branch and makes that your working branch
 when in the branch you want to be in : git merge (branchname) will merge the branch you want into your current working branch
 
 git -d deletes a working branch
+
+git diff - shows all changes made since last commit
+
+git diff HEAD shows changes for current commit
+
+git diff --staged shows changes that have been staged
+
+git reset --soft <commit name> will take you your local repo to last commit
+
+git reset --Hard <commit name> will revert your local repo to last commit
+
+git rm will get rid of all files and stagfe them for you as well
+
+
+
 
 

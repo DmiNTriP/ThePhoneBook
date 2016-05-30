@@ -16,7 +16,7 @@ public class Main {
         Employee jane = new Employee("Jane","Williams","jw@somewhere.com","555-555-5555");
 
         table.addInformation(jane);
-        Employee mohamed = new Employee("Mohamed","Ala-Sam","mas@somewhere.com","555-555-5555");
+   /*     Employee mohamed = new Employee("Mohamed","Ala-Sam","mas@somewhere.com","555-555-5555");
 
         table.addInformation(mohamed);
         Employee pat = new Employee("Pat","Jones","pjones@homesweethome.com","555-555-5555");
@@ -40,9 +40,9 @@ public class Main {
         Employee janeD = new Employee("Jane","Doe","jdoe@somedomain.com","555-555-5555");
 
         table.addInformation(janeD);
+*/
 
-
-        table.find(billy.fullName());
+        table.find(jane.fullName());
 
 
 

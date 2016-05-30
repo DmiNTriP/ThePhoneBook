@@ -42,11 +42,11 @@ public class MyLinkedList {
             firstEmployee = newEmployee; //adds to the front of the list.
             firstEmployee.setNext(newEmployee);
         } else {
-            while (newEmployee != null) {
-                newEmployee = firstEmployee;
-                firstEmployee = firstEmployee.getNext();
+
+                previousEmployee = newEmployee;
+                currentEmployee = newEmployee.getNext();
             }
-        }
+
 
 
         return this;

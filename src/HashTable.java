@@ -60,6 +60,7 @@ public class HashTable {
     }
 
     public boolean find( String nameToFind) {
+        newEmployee.hashThisName(nameToFind);
         Employee employee = newEmployee;
         int hashKey = employee.nameToHash();
         boolean found = true;

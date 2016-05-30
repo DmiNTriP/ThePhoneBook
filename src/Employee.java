@@ -108,8 +108,14 @@ public class Employee {
 
         return mFirstName.toUpperCase().concat(mLastName.toUpperCase());
     }
-    public int nameToHash(){
+    protected int nameToHash(){
       return Math.abs( fullName().hashCode() -1);
     }
+
+    public int hashThisName(String nameToFind){
+        return  nameToHash();
+    }
+
+
 
 }
