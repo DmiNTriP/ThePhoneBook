@@ -12,7 +12,8 @@ public class HashTable {
     public HashTable() {// the size here will determine how big we want the array to be and in this case it will be 13
         //creating the Array for the linkedlist
         linkListArray = new MyLinkedList[arraySize];
-       newEmployee = null;
+        link = new MyLinkedList(newEmployee);
+
 /*
      addInformation(newEmployee);
 */
@@ -58,27 +59,20 @@ public class HashTable {
         linkListArray[hashBucket].insert(newEmployee);
     }
 
-    public boolean find(Employee newEmployee,String nameToFind) {
-        //create an employee object to reference;
-        boolean found;
+    public boolean find( String nameToFind) {
+        Employee employee = newEmployee;
+        int hashKey = employee.nameToHash();
+        boolean found = true;
+        if(found) {
+           employee= linkListArray[hashKey].search(hashKey);
+            System.out.println(nameToFind + "was found");
 
-       if(nameToFind.equals(newEmployee.fullName())) {
-           // if we have a match then we will hash the key
-           int hashKey= newEmployee.nameToHash();
-            int bucket= newEmployee.nameToHash() % arraySize;
-           System.out.println(bucket);
-            found = true;
-            if (found) {
-                linkListArray[bucket].search(hashKey);
-                System.out.println(nameToFind + "was found");
-
-                return found;
-            } else {
-                System.out.print("employee not found");
-            }
+            return found;
+        }
+        else{
+            System.out.print("employee not found");
         }
         return  false;
-
    }
 
     public void addInformation(Employee anEmployee) {
@@ -93,6 +87,7 @@ public class HashTable {
             String eMail = anEmployee.getEmail();
             String phoneNum = anEmployee.getPhoneNum();
             anEmployee = new Employee(firstName, lastName, eMail, phoneNum);
+            link.insert(anEmployee);
             int hashBucket = hashKey % 13;
             linkListArray[hashBucket] = link;
             System.out.println(anEmployee + " has been added");
